@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Path Integration Coaching — Clarity. Direction. A plan that fits who you truly are.</title>
+  <meta name="description" content="Path Integration Coaching offers structured support for life's biggest transitions. Find clarity, build direction, and live aligned with certified coach Kelli Hamilton.">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --cream: #FDFBF5;
+      --sky-blue: #D6E8F0;
+      --sage: #A8C5B5;
+      --sand: #E8D5B0;
+      --forest: #3D5A47;
+      --body-text: #4A4A4A;
+      --sage-hover: #8FB5A1;
+      --max-width: 1120px;
+    }
+
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      color: var(--body-text);
+      background-color: var(--cream);
+      line-height: 1.7;
+      font-size: 16px;
+    }
+
+    /* ─── NAV ─── */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: rgba(253, 251, 245, 0.95);
+      backdrop-filter: blur(8px);
+      z-index: 100;
+      border-bottom: 1px solid var(--sand);
+    }
+
+    .nav-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 700;
+      font-size: 1.35rem;
+      color: var(--forest);
+      text-decoration: none;
+      letter-spacing: 0.01em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--body-text);
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--forest);
+    }
+
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0.25rem;
+    }
+
+    .nav-toggle span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--forest);
+      margin: 5px 0;
+      transition: 0.3s;
+    }
+
+    /* ─── SECTION SHARED ─── */
+    section {
+      padding: 6rem 2rem;
+    }
+
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 500;
+      font-size: 0.8rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--sage);
+      margin-bottom: 0.75rem;
+    }
+
+    h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 700;
+      font-size: clamp(2.5rem, 5vw, 3.75rem);
+      color: var(--forest);
+      line-height: 1.15;
+      margin-bottom: 1.25rem;
+    }
+
+    h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 700;
+      font-size: clamp(2rem, 4vw, 2.75rem);
+      color: var(--forest);
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 1rem 2.25rem;
+      background: var(--sage);
+      color: #fff;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 600;
+      font-size: 1rem;
+      border: none;
+      border-radius: 6px;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s;
+    }
+
+    .btn:hover {
+      background: var(--sage-hover);
+      transform: translateY(-1px);
+    }
+
+    /* ─── HERO ─── */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      background: var(--cream);
+      padding-top: 5rem;
+    }
+
+    .hero .container {
+      max-width: 720px;
+      text-align: center;
+      margin: 0 auto;
+    }
+
+    .hero p {
+      font-size: 1.15rem;
+      color: var(--body-text);
+      margin-bottom: 2.5rem;
+      max-width: 560px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .hero-divider {
+      width: 60px;
+      height: 3px;
+      background: var(--sage);
+      margin: 0 auto 2rem;
+      border-radius: 2px;
+    }
+
+    /* ─── METHOD ─── */
+    .method {
+      background: var(--sky-blue);
+    }
+
+    .method-intro {
+      max-width: 640px;
+      font-size: 1.05rem;
+      margin-bottom: 3rem;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 10px;
+      padding: 2rem 1.75rem;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    }
+
+    .card-icon {
+      width: 48px;
+      height: 48px;
+      background: var(--sage);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.25rem;
+      font-size: 1.4rem;
+    }
+
+    .card h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 700;
+      font-size: 1.3rem;
+      color: var(--forest);
+      margin-bottom: 0.5rem;
+    }
+
+    .card p {
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    /* ─── TOOLS ─── */
+    .tools {
+      background: var(--cream);
+    }
+
+    .tool-card {
+      background: #fff;
+      border: 1px solid var(--sand);
+      border-radius: 10px;
+      padding: 2rem 1.75rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .tool-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+    }
+
+    .tool-card h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 700;
+      font-size: 1.2rem;
+      color: var(--forest);
+      margin-bottom: 0.5rem;
+    }
+
+    .tool-card p {
+      font-size: 0.93rem;
+      line-height: 1.6;
+    }
+
+    .tools-intro {
+      max-width: 640px;
+      font-size: 1.05rem;
+      margin-bottom: 3rem;
+    }
+
+    /* ─── FIT ─── */
+    .fit {
+      background: var(--sky-blue);
+    }
+
+    .fit-content {
+      max-width: 680px;
+    }
+
+    .checklist {
+      list-style: none;
+      margin: 2rem 0;
+    }
+
+    .checklist li {
+      position: relative;
+      padding-left: 2rem;
+      margin-bottom: 1.15rem;
+      font-size: 1.05rem;
+      line-height: 1.6;
+    }
+
+    .checklist li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.45rem;
+      width: 14px;
+      height: 14px;
+      border: 2px solid var(--sage);
+      border-radius: 3px;
+    }
+
+    .fit-closing {
+      font-size: 1.05rem;
+      font-weight: 500;
+      color: var(--forest);
+      margin-top: 1.5rem;
+      font-style: italic;
+    }
+
+    /* ─── ABOUT ─── */
+    .about {
+      background: var(--cream);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
+
+    .about-photo {
+      width: 100%;
+      aspect-ratio: 3/4;
+      background: var(--sky-blue);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--sage);
+      font-size: 0.9rem;
+      font-weight: 500;
+      border: 2px dashed var(--sage);
+    }
+
+    .about-text p {
+      font-size: 1.05rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .credentials {
+      list-style: none;
+      margin-top: 1.5rem;
+    }
+
+    .credentials li {
+      position: relative;
+      padding-left: 1.5rem;
+      margin-bottom: 0.75rem;
+      font-size: 0.95rem;
+    }
+
+    .credentials li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--sage);
+      font-weight: 600;
+    }
+
+    /* ─── BOOKING ─── */
+    .booking {
+      background: var(--sky-blue);
+      text-align: center;
+    }
+
+    .booking p {
+      font-size: 1.1rem;
+      max-width: 540px;
+      margin: 0 auto 2rem;
+    }
+
+    .tidycal-embed {
+      max-width: 640px;
+      margin: 2rem auto;
+      min-height: 400px;
+      background: #fff;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--body-text);
+      font-size: 0.9rem;
+      padding: 2rem;
+    }
+
+    .contact-info {
+      margin-top: 2.5rem;
+      font-size: 0.95rem;
+      color: var(--body-text);
+    }
+
+    .contact-info a {
+      color: var(--forest);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .contact-info a:hover {
+      text-decoration: underline;
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: var(--forest);
+      color: rgba(255,255,255,0.7);
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.85rem;
+    }
+
+    footer a {
+      color: rgba(255,255,255,0.9);
+      text-decoration: none;
+    }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 768px) {
+      section {
+        padding: 4rem 1.25rem;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: rgba(253, 251, 245, 0.98);
+        flex-direction: column;
+        padding: 1.5rem 2rem;
+        gap: 1rem;
+        border-bottom: 1px solid var(--sand);
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .nav-toggle {
+        display: block;
+      }
+
+      .nav-toggle.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+      }
+
+      .nav-toggle.active span:nth-child(2) {
+        opacity: 0;
+      }
+
+      .nav-toggle.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .about-photo {
+        max-width: 280px;
+        margin: 0 auto;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">Path Integration</a>
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="#method">The Method</a></li>
+        <li><a href="#tools">Tools</a></li>
+        <li><a href="#fit">Is This For You?</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#book">Book a Call</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- SECTION 1 — HERO -->
+  <section class="hero" id="hero">
+    <div class="container">
+      <h1>Find Clarity. Build Direction. Live Aligned.</h1>
+      <div class="hero-divider"></div>
+      <p>Path Integration Coaching — structured support for life's most meaningful transitions.</p>
+      <a href="#book" class="btn">Book a Free Consultation</a>
+    </div>
+  </section>
+
+  <!-- SECTION 2 — THE METHOD -->
+  <section class="method" id="method">
+    <div class="container">
+      <div class="section-label">The Method</div>
+      <h2>A Structured Path to Clarity</h2>
+      <p class="method-intro">Path Integration Coaching uses a proven four-phase framework to help you move from feeling stuck to taking aligned, confident action. Each phase builds on the last — so your plan fits who you truly are.</p>
+      <div class="cards">
+        <div class="card">
+          <div class="card-icon">
+            <svg width="24" height="24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+          </div>
+          <h3>Purpose Discovery</h3>
+          <p>Uncover what truly drives you beneath the noise. We clarify your values, interests, and non-negotiables to build a foundation for every decision that follows.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">
+            <svg width="24" height="24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <h3>Strengths & Flow</h3>
+          <p>Identify your natural talents and the conditions where you perform at your best. We use evidence-based assessments to map your unique strengths profile.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">
+            <svg width="24" height="24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+          </div>
+          <h3>Change Barriers</h3>
+          <p>Name the patterns, fears, and stories that keep you stuck. We work through what's actually blocking your progress — not just what's on the surface.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">
+            <svg width="24" height="24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          </div>
+          <h3>Action & Accountability</h3>
+          <p>Build a realistic, step-by-step plan with built-in checkpoints. You leave each session with clear next steps — and the follow-through to match.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3 — ASSESSMENT TOOLS -->
+  <section class="tools" id="tools">
+    <div class="container">
+      <div class="section-label">Tools for Insight</div>
+      <h2>Understanding You, Deeply</h2>
+      <p class="tools-intro">These professionally validated assessments reduce guesswork and help build a plan based on who you actually are — not who you think you should be.</p>
+      <div class="cards">
+        <div class="tool-card">
+          <h3>Strong Interest Inventory</h3>
+          <p>Maps your interests against career themes and work environments to identify paths that genuinely engage you — backed by decades of research.</p>
+        </div>
+        <div class="tool-card">
+          <h3>VIA Character Strengths</h3>
+          <p>Reveals your core character strengths — the qualities that come most naturally to you and drive satisfaction when you use them regularly.</p>
+        </div>
+        <div class="tool-card">
+          <h3>Work Values Inventory</h3>
+          <p>Clarifies what matters most to you in your work life — autonomy, security, impact, creativity — so your next move aligns with your real priorities.</p>
+        </div>
+        <div class="tool-card">
+          <h3>Differential Aptitude Tests</h3>
+          <p>Measures your natural cognitive strengths across areas like reasoning, spatial awareness, and language to match opportunities to your abilities.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4 — IS THIS RIGHT FOR YOU? -->
+  <section class="fit" id="fit">
+    <div class="container">
+      <div class="section-label">Who This Is For</div>
+      <h2>You might be ready if...</h2>
+      <div class="fit-content">
+        <ul class="checklist">
+          <li>You feel stuck or overwhelmed, but you can't quite name why</li>
+          <li>You're in a major life transition — career change, empty nest, divorce, post-college — and you need a clear path forward</li>
+          <li>You want clarity about what you actually want, not just what looks good on paper</li>
+          <li>You've tried figuring it out on your own, but you keep going in circles</li>
+          <li>You're ready for structured support — not vague advice, but a real plan</li>
+        </ul>
+        <p class="fit-closing">"This is not therapy. And it's not surface-level coaching. It's structured, evidence-based support to help you find your path and own your direction."</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 5 — ABOUT KELLI -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="section-label">Your Coach</div>
+      <h2>Meet Kelli Hamilton</h2>
+      <div class="about-grid">
+        <div class="about-photo">
+          <span>Photo coming soon</span>
+        </div>
+        <div class="about-text">
+          <p>I spent years helping people navigate major transitions — career pivots, identity shifts, the kind of crossroads that don't come with a clear playbook. What I kept seeing was the same pattern: smart, capable people who knew something had to change, but couldn't quite find the path forward on their own.</p>
+          <p>Path Integration Coaching was built for that exact moment. I combine professional assessments, structured frameworks, and genuine human support to help you get unstuck — not with hype or platitudes, but with a plan that actually fits your life.</p>
+          <p>I believe the answers are already inside you. My job is to help you find them, name them, and build around them.</p>
+          <ul class="credentials">
+            <li>Certified Professional Coach</li>
+            <li>Trained in Strong Interest Inventory, VIA, and aptitude-based assessment</li>
+            <li>Specializing in career clarity, life transitions, and purpose alignment</li>
+            <li>Based in Southern California — working with clients nationwide</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 6 — BOOK A SESSION -->
+  <section class="booking" id="book">
+    <div class="container">
+      <div class="section-label">Let's Work Together</div>
+      <h2>Ready to Find Your Path?</h2>
+      <p>Book a free consultation to talk about where you are, where you want to go, and whether Path Integration Coaching is the right fit.</p>
+
+      <!-- TidyCal Embed — replace YOUR-USERNAME with your TidyCal link -->
+      <div class="tidycal-embed" data-path="YOUR-USERNAME">
+        TidyCal booking widget will appear here once your account is connected.
+      </div>
+
+      <div class="contact-info">
+        <a href="mailto:kellihamilton@pathintegration.org">kellihamilton@pathintegration.org</a>
+        &nbsp;&bull;&nbsp;
+        <a href="tel:+19493387067">(949) 338-7067</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2026 Path Integration Coaching. All rights reserved.</p>
+  </footer>
+
+  <!-- TidyCal Script — uncomment when ready -->
+  <!-- <script src="https://asset-tidycal.b-cdn.net/js/embed.js"></script> -->
+
+  <script>
+    // Mobile nav toggle
+    const toggle = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    toggle.addEventListener('click', () => {
+      toggle.classList.toggle('active');
+      navLinks.classList.toggle('active');
+    });
+
+    // Close mobile nav when a link is clicked
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        toggle.classList.remove('active');
+        navLinks.classList.remove('active');
+      });
+    });
+  </script>
+
+</body>
+</html>
