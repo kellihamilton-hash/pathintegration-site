@@ -80,6 +80,12 @@
       transition: color 0.2s;
     }
 
+    .nav-logo-img {
+      height: 44px;
+      width: auto;
+      mix-blend-mode: multiply;
+    }
+
     .nav-links a:hover {
       color: var(--forest);
     }
@@ -169,8 +175,21 @@
     }
 
     .hero .container {
-      max-width: 720px;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .hero-top {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .hero-text {
       text-align: center;
+      max-width: 640px;
       margin: 0 auto;
     }
 
@@ -183,6 +202,17 @@
       margin-right: auto;
     }
 
+    .hero-logo {
+      width: 120px;
+      height: auto;
+      mix-blend-mode: multiply;
+      flex-shrink: 0;
+    }
+
+    .hero-top h1 {
+      margin: 0;
+    }
+
     .hero-divider {
       width: 60px;
       height: 3px;
@@ -191,97 +221,203 @@
       border-radius: 2px;
     }
 
-    /* ─── METHOD ─── */
-    .method {
+    /* ─── QUOTE BANNER ─── */
+    .quote-banner {
+      background: var(--forest);
+      padding: 3.5rem 2rem;
+      text-align: center;
+    }
+
+    .quote-banner blockquote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.15rem, 2.5vw, 1.5rem);
+      font-style: italic;
+      color: rgba(255,255,255,0.92);
+      max-width: 640px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    .quote-banner cite {
+      display: block;
+      margin-top: 1rem;
+      font-family: 'DM Sans', sans-serif;
+      font-style: normal;
+      font-size: 0.9rem;
+      color: var(--sage);
+      letter-spacing: 0.05em;
+    }
+
+    /* ─── MISSION ─── */
+    .mission {
+      background: var(--cream);
+    }
+
+    .mission-statement {
+      max-width: 720px;
+      background: #fff;
+      border-left: 4px solid var(--sage);
+      border-radius: 0 10px 10px 0;
+      padding: 2rem 2.5rem;
+      margin-bottom: 2rem;
+      font-size: 1.1rem;
+      line-height: 1.8;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+    }
+
+    .mission-body {
+      max-width: 720px;
+    }
+
+    .mission-body p {
+      font-size: 1.05rem;
+      margin-bottom: 1.25rem;
+    }
+
+    /* ─── PILLARS ─── */
+    .pillars {
       background: var(--sky-blue);
     }
 
-    .method-intro {
-      max-width: 640px;
+    .pillars-intro {
+      max-width: 720px;
       font-size: 1.05rem;
       margin-bottom: 3rem;
     }
 
-    .cards {
+    .pillar-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 1.5rem;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
     }
 
-    .card {
+    .pillar-card {
       background: #fff;
-      border-radius: 10px;
-      padding: 2rem 1.75rem;
+      border-radius: 12px;
+      overflow: hidden;
       box-shadow: 0 2px 12px rgba(0,0,0,0.06);
       transition: transform 0.2s, box-shadow 0.2s;
     }
 
-    .card:hover {
+    .pillar-card:hover {
       transform: translateY(-3px);
       box-shadow: 0 6px 20px rgba(0,0,0,0.1);
     }
 
-    .card-icon {
-      width: 48px;
-      height: 48px;
-      background: var(--sage);
-      border-radius: 50%;
+    .pillar-header {
       display: flex;
       align-items: center;
-      justify-content: center;
-      margin-bottom: 1.25rem;
-      font-size: 1.4rem;
+      gap: 1rem;
+      padding: 1.25rem 1.75rem;
     }
 
-    .card h3 {
+    .pillar-card:nth-child(1) .pillar-header { background: var(--sage); }
+    .pillar-card:nth-child(2) .pillar-header { background: var(--sand); }
+    .pillar-card:nth-child(3) .pillar-header { background: #b8cfe0; }
+    .pillar-card:nth-child(4) .pillar-header { background: #d4b896; }
+
+    .pillar-number {
       font-family: 'Cormorant Garamond', serif;
       font-weight: 700;
-      font-size: 1.3rem;
+      font-size: 2rem;
+      color: #fff;
+      line-height: 1;
+      opacity: 0.85;
+    }
+
+    .pillar-header-text h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 700;
+      font-size: 1.35rem;
+      color: #fff;
+      margin: 0;
+      line-height: 1.2;
+    }
+
+    .pillar-header-text span {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.85);
+      font-style: italic;
+    }
+
+    .pillar-body {
+      padding: 1.75rem;
+    }
+
+    .pillar-question {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 600;
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--sage);
+      margin-bottom: 0.5rem;
+    }
+
+    .pillar-body > p {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 1.25rem;
+      color: var(--body-text);
+    }
+
+    .pillar-tools-label {
+      font-weight: 600;
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
       color: var(--forest);
       margin-bottom: 0.5rem;
     }
 
-    .card p {
-      font-size: 0.95rem;
-      line-height: 1.6;
+    .pillar-tools {
+      list-style: none;
+      margin: 0;
+      padding: 0;
     }
 
-    /* ─── TOOLS ─── */
-    .tools {
+    .pillar-tools li {
+      position: relative;
+      padding-left: 1.25rem;
+      margin-bottom: 0.4rem;
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+
+    .pillar-tools li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.55rem;
+      width: 6px;
+      height: 6px;
+      background: var(--sage);
+      border-radius: 50%;
+    }
+
+    .pillar-closing {
+      text-align: center;
+      font-style: italic;
+      font-size: 1.05rem;
+      color: var(--forest);
+      margin-top: 2.5rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* ─── BEGIN YOUR PATH ─── */
+    .begin-path {
       background: var(--cream);
     }
 
-    .tool-card {
-      background: #fff;
-      border: 1px solid var(--sand);
-      border-radius: 10px;
-      padding: 2rem 1.75rem;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-      transition: transform 0.2s, box-shadow 0.2s;
+    .begin-path-content {
+      max-width: 720px;
     }
 
-    .tool-card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-    }
-
-    .tool-card h3 {
-      font-family: 'Cormorant Garamond', serif;
-      font-weight: 700;
-      font-size: 1.2rem;
-      color: var(--forest);
-      margin-bottom: 0.5rem;
-    }
-
-    .tool-card p {
-      font-size: 0.93rem;
-      line-height: 1.6;
-    }
-
-    .tools-intro {
-      max-width: 640px;
+    .begin-path-content p {
       font-size: 1.05rem;
-      margin-bottom: 3rem;
+      margin-bottom: 1.25rem;
     }
 
     /* ─── FIT ─── */
@@ -339,16 +475,16 @@
 
     .about-photo {
       width: 100%;
-      aspect-ratio: 3/4;
-      background: var(--sky-blue);
       border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--sage);
-      font-size: 0.9rem;
-      font-weight: 500;
-      border: 2px dashed var(--sage);
+      overflow: hidden;
+    }
+
+    .about-photo img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 12px;
+      object-fit: cover;
     }
 
     .about-text p {
@@ -356,24 +492,55 @@
       margin-bottom: 1.25rem;
     }
 
-    .credentials {
-      list-style: none;
-      margin-top: 1.5rem;
+    .credentials-table {
+      margin-top: 2rem;
+      width: 100%;
+      border-collapse: collapse;
     }
 
-    .credentials li {
-      position: relative;
-      padding-left: 1.5rem;
-      margin-bottom: 0.75rem;
-      font-size: 0.95rem;
-    }
-
-    .credentials li::before {
-      content: '—';
-      position: absolute;
-      left: 0;
-      color: var(--sage);
+    .credentials-table caption {
+      font-family: 'DM Sans', sans-serif;
       font-weight: 600;
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--sage);
+      text-align: left;
+      margin-bottom: 0.75rem;
+      caption-side: top;
+    }
+
+    .credentials-table tr {
+      border-bottom: 1px solid var(--sand);
+    }
+
+    .credentials-table td {
+      padding: 0.65rem 0;
+      font-size: 0.93rem;
+      vertical-align: top;
+    }
+
+    .credentials-table td:first-child {
+      font-weight: 600;
+      color: var(--forest);
+      padding-right: 1.5rem;
+      white-space: nowrap;
+    }
+
+    .credentials-table td:last-child {
+      font-style: italic;
+      color: var(--body-text);
+    }
+
+    .cert-badge {
+      width: 220px;
+      height: auto;
+      margin-top: 2rem;
+      padding: 1rem 1.25rem;
+      background: var(--cream);
+      border-radius: 10px;
+      border: 1px solid var(--sand);
+      mix-blend-mode: multiply;
     }
 
     /* ─── BOOKING ─── */
@@ -480,8 +647,12 @@
         margin: 0 auto;
       }
 
-      .cards {
+      .pillar-grid {
         grid-template-columns: 1fr;
+      }
+
+      .credentials-table td:first-child {
+        white-space: normal;
       }
     }
   </style>
@@ -498,8 +669,8 @@
         <span></span>
       </button>
       <ul class="nav-links">
-        <li><a href="#method">The Method</a></li>
-        <li><a href="#tools">Tools</a></li>
+        <li><a href="#mission">Mission</a></li>
+        <li><a href="#pillars">The Four Pillars</a></li>
         <li><a href="#fit">Is This For You?</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#book">Book a Call</a></li>
@@ -510,76 +681,138 @@
   <!-- SECTION 1 — HERO -->
   <section class="hero" id="hero">
     <div class="container">
+      <img src="images/logo.png" alt="Path Integration Coaching" class="hero-logo">
       <h1>Find Clarity. Build Direction. Live Aligned.</h1>
       <div class="hero-divider"></div>
-      <p>Path Integration Coaching — structured support for life's most meaningful transitions.</p>
-      <a href="#book" class="btn">Book a Free Consultation</a>
+      <p>A whole-person framework for finding direction, aligning to purpose, and designing a life well-lived.</p>
+      <a href="https://tidycal.com/kellihamilton/start-of-application-process-class-of-2027" class="btn" target="_blank" rel="noopener">Book a Free Consultation</a>
     </div>
   </section>
 
-  <!-- SECTION 2 — THE METHOD -->
-  <section class="method" id="method">
+  <!-- QUOTE BANNER -->
+  <div class="quote-banner">
+    <blockquote>
+      &ldquo;The meaning of life is to find your gift. The purpose of life is to give it away.&rdquo;
+      <cite>&mdash; Pablo Picasso</cite>
+    </blockquote>
+  </div>
+
+  <!-- SECTION 2 — MISSION -->
+  <section class="mission" id="mission">
     <div class="container">
-      <div class="section-label">The Method</div>
-      <h2>A Structured Path to Clarity</h2>
-      <p class="method-intro">Path Integration Coaching uses a proven four-phase framework to help you move from feeling stuck to taking aligned, confident action. Each phase builds on the last — so your plan fits who you truly are.</p>
-      <div class="cards">
-        <div class="card">
-          <div class="card-icon">
-            <svg width="24" height="24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
-          </div>
-          <h3>Purpose Discovery</h3>
-          <p>Uncover what truly drives you beneath the noise. We clarify your values, interests, and non-negotiables to build a foundation for every decision that follows.</p>
-        </div>
-        <div class="card">
-          <div class="card-icon">
-            <svg width="24" height="24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          </div>
-          <h3>Strengths & Flow</h3>
-          <p>Identify your natural talents and the conditions where you perform at your best. We use evidence-based assessments to map your unique strengths profile.</p>
-        </div>
-        <div class="card">
-          <div class="card-icon">
-            <svg width="24" height="24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
-          </div>
-          <h3>Change Barriers</h3>
-          <p>Name the patterns, fears, and stories that keep you stuck. We work through what's actually blocking your progress — not just what's on the surface.</p>
-        </div>
-        <div class="card">
-          <div class="card-icon">
-            <svg width="24" height="24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-          </div>
-          <h3>Action & Accountability</h3>
-          <p>Build a realistic, step-by-step plan with built-in checkpoints. You leave each session with clear next steps — and the follow-through to match.</p>
-        </div>
+      <div class="section-label">Our Mission</div>
+      <h2>What We Do &amp; Why It Matters</h2>
+      <div class="mission-statement">
+        Path Integration exists to increase a sense of life well-being by helping people who feel stuck align to themselves and find direction &mdash; through emotional awareness, clarity of purpose, a deep understanding of personal strengths and flow, and the practical tools to turn insight into a life that is both meaningful and sustainable.
+      </div>
+      <div class="mission-body">
+        <p>Whether you are navigating a career crossroads, a life transition, or simply a quiet sense that something is missing, Path Integration offers a structured, compassionate, and evidence-informed process to help you move forward with intention.</p>
+        <p>Our approach draws on a rich body of research &mdash; from Viktor Frankl's Logotherapy and Csikszentmihalyi's Flow theory, to Positive Psychology and the PERMA framework, HeartMath coherence science, Mindfulness-Based Stress Reduction, and the neuroscience of habit and behavior change. These are not abstract ideas &mdash; they are practical lenses that illuminate who you are, what you want, and how to get there.</p>
       </div>
     </div>
   </section>
 
-  <!-- SECTION 3 — ASSESSMENT TOOLS -->
-  <section class="tools" id="tools">
+  <!-- SECTION 3 — THE FOUR PILLARS -->
+  <section class="pillars" id="pillars">
     <div class="container">
-      <div class="section-label">Tools for Insight</div>
-      <h2>Understanding You, Deeply</h2>
-      <p class="tools-intro">These professionally validated assessments reduce guesswork and help build a plan based on who you actually are — not who you think you should be.</p>
-      <div class="cards">
-        <div class="tool-card">
-          <h3>Strong Interest Inventory</h3>
-          <p>Maps your interests against career themes and work environments to identify paths that genuinely engage you — backed by decades of research.</p>
+      <div class="section-label">The Framework</div>
+      <h2>The Four Pillars of Path Integration</h2>
+      <p class="pillars-intro">Each pillar builds upon the last &mdash; moving from inner awareness outward into purposeful action. Together they form a complete, integrated process for self-discovery and meaningful living.</p>
+      <div class="pillar-grid">
+
+        <div class="pillar-card">
+          <div class="pillar-header">
+            <span class="pillar-number">01</span>
+            <div class="pillar-header-text">
+              <h3>Align to Self</h3>
+              <span>Purpose, Meaning &amp; Identity</span>
+            </div>
+          </div>
+          <div class="pillar-body">
+            <div class="pillar-question">Who am I?</div>
+            <p>At the heart of a fulfilling life is a clear sense of meaning. This pillar explores the sources of meaning in your life: your work, your relationships, the experiences that have shaped you, and the attitudes you bring to challenge and change.</p>
+            <div class="pillar-tools-label">Coaching Tools &amp; Practices</div>
+            <ul class="pillar-tools">
+              <li>Values clarification exercises and inventories</li>
+              <li>Life timeline and narrative exploration</li>
+              <li>Contribution mapping: the impact you want to make</li>
+              <li>Reframing everyday tasks through the lens of purpose</li>
+              <li>Self-identity and role exploration</li>
+            </ul>
+          </div>
         </div>
-        <div class="tool-card">
-          <h3>VIA Character Strengths</h3>
-          <p>Reveals your core character strengths — the qualities that come most naturally to you and drive satisfaction when you use them regularly.</p>
+
+        <div class="pillar-card">
+          <div class="pillar-header">
+            <span class="pillar-number">02</span>
+            <div class="pillar-header-text">
+              <h3>Know Your Flow</h3>
+              <span>Strengths, Interests &amp; Natural Abilities</span>
+            </div>
+          </div>
+          <div class="pillar-body">
+            <div class="pillar-question">How do I tick?</div>
+            <p>You function best &mdash; and feel most alive &mdash; when engaged in activities that draw on your natural strengths and genuine interests. This pillar is devoted to understanding how you are uniquely wired.</p>
+            <div class="pillar-tools-label">Coaching Tools &amp; Practices</div>
+            <ul class="pillar-tools">
+              <li>VIA Character Strengths Survey</li>
+              <li>Strong Interest Inventory (certified administration)</li>
+              <li>Aptitude and personality assessments</li>
+              <li>Flow activity mapping across work and non-work environments</li>
+              <li>Strengths-to-life integration planning</li>
+            </ul>
+          </div>
         </div>
-        <div class="tool-card">
-          <h3>Work Values Inventory</h3>
-          <p>Clarifies what matters most to you in your work life — autonomy, security, impact, creativity — so your next move aligns with your real priorities.</p>
+
+        <div class="pillar-card">
+          <div class="pillar-header">
+            <span class="pillar-number">03</span>
+            <div class="pillar-header-text">
+              <h3>Navigate Change</h3>
+              <span>Mindset, Habits &amp; Inner Coherence</span>
+            </div>
+          </div>
+          <div class="pillar-body">
+            <div class="pillar-question">What holds me back?</div>
+            <p>Knowing what you want is only part of the journey. This pillar gently uncovers the mindset patterns, unconscious beliefs, and habit loops that create resistance &mdash; and builds the inner resources needed to move forward with greater ease and resilience.</p>
+            <div class="pillar-tools-label">Coaching Tools &amp; Practices</div>
+            <ul class="pillar-tools">
+              <li>Mindset exploration and cognitive reframing</li>
+              <li>MBSR meditation and mindfulness training</li>
+              <li>HeartMath heart coherence techniques</li>
+              <li>Habit loop exploration and tracking</li>
+              <li>Emotional and meta-awareness development</li>
+              <li>Body-based awareness and somatic attunement</li>
+            </ul>
+          </div>
         </div>
-        <div class="tool-card">
-          <h3>Differential Aptitude Tests</h3>
-          <p>Measures your natural cognitive strengths across areas like reasoning, spatial awareness, and language to match opportunities to your abilities.</p>
+
+        <div class="pillar-card">
+          <div class="pillar-header">
+            <span class="pillar-number">04</span>
+            <div class="pillar-header-text">
+              <h3>Design Your Life</h3>
+              <span>Goals, Action &amp; Sustainable Well-Being</span>
+            </div>
+          </div>
+          <div class="pillar-body">
+            <div class="pillar-question">Where am I going?</div>
+            <p>Insight without action remains a dream. This pillar translates everything discovered in the previous three into a concrete, personalized life and career roadmap &mdash; with weekly experiments, intentional goal structures, and ongoing accountability.</p>
+            <div class="pillar-tools-label">Coaching Tools &amp; Practices</div>
+            <ul class="pillar-tools">
+              <li>Goal mapping and action step planning</li>
+              <li>Weekly experiments and accountability check-ins</li>
+              <li>Wellness behavior and healthspan analysis</li>
+              <li>Well-being routines and lifestyle design</li>
+              <li>Mind-body connection and nature integration</li>
+              <li>Reflective journaling for self-discovery</li>
+              <li>Career and life direction roadmap</li>
+            </ul>
+          </div>
         </div>
+
       </div>
+      <p class="pillar-closing">Each pillar builds upon the last &mdash; moving from inner clarity to purposeful, embodied action.</p>
     </div>
   </section>
 
@@ -605,37 +838,77 @@
   <section class="about" id="about">
     <div class="container">
       <div class="section-label">Your Coach</div>
-      <h2>Meet Kelli Hamilton</h2>
+      <h2>Meet Kelli Hamilton, MA, OTR/L, IEC</h2>
       <div class="about-grid">
         <div class="about-photo">
-          <span>Photo coming soon</span>
+          <img src="images/kelli.jpg" alt="Kelli Hamilton">
         </div>
         <div class="about-text">
-          <p>I spent years helping people navigate major transitions — career pivots, identity shifts, the kind of crossroads that don't come with a clear playbook. What I kept seeing was the same pattern: smart, capable people who knew something had to change, but couldn't quite find the path forward on their own.</p>
-          <p>Path Integration Coaching was built for that exact moment. I combine professional assessments, structured frameworks, and genuine human support to help you get unstuck — not with hype or platitudes, but with a plan that actually fits your life.</p>
-          <p>I believe the answers are already inside you. My job is to help you find them, name them, and build around them.</p>
-          <ul class="credentials">
-            <li>Certified Professional Coach</li>
-            <li>Trained in Strong Interest Inventory, VIA, and aptitude-based assessment</li>
-            <li>Specializing in career clarity, life transitions, and purpose alignment</li>
-            <li>Based in Southern California — working with clients nationwide</li>
-          </ul>
+          <p>Kelli Hamilton brings a rare and powerful combination of clinical depth, educational expertise, and wellness practice to the field of life and career coaching. Her work is rooted in over a decade of direct client experience and grounded in evidence-based frameworks drawn from occupational therapy, psychology, neuroscience, and contemplative practice.</p>
+          <p>Kelli holds a Bachelor of Arts from Vanderbilt University and a Master of Arts in Occupational Therapy from the University of Southern California. Her clinical career spanned a wide range of healthcare settings, giving her a nuanced understanding of how the mind, body, and environment interact to shape how we function and flourish.</p>
+          <p>For the past ten years, she has channeled that expertise into private college counseling, guiding more than 125 students and families through one of life's most pivotal transitions &mdash; with a deeply personalized, whole-person approach.</p>
+          <table class="credentials-table">
+            <caption>Credentials &amp; Certifications</caption>
+            <tr>
+              <td>MA, Occupational Therapy</td>
+              <td>University of Southern California</td>
+            </tr>
+            <tr>
+              <td>BA</td>
+              <td>Vanderbilt University</td>
+            </tr>
+            <tr>
+              <td>Independent Educational Consultant (IEC)</td>
+              <td>Certified &mdash; UC Irvine</td>
+            </tr>
+            <tr>
+              <td>HeartMath Certified Practitioner</td>
+              <td>HeartMath Institute</td>
+            </tr>
+            <tr>
+              <td>Mindfulness-Based Stress Reduction (MBSR)</td>
+              <td>Certified</td>
+            </tr>
+            <tr>
+              <td>Strong Interest Inventory</td>
+              <td>Certified Administrator</td>
+            </tr>
+          </table>
+          <img src="images/heartmath-certified.png" alt="HeartMath Certified Practitioner" class="cert-badge">
         </div>
       </div>
     </div>
   </section>
 
-  <!-- SECTION 6 — BOOK A SESSION -->
+  <!-- SECTION 6 — BEGIN YOUR PATH -->
+  <section class="begin-path" id="begin">
+    <div class="container">
+      <div class="section-label">Begin Your Path</div>
+      <h2>The Journey Toward a Life Well-Lived</h2>
+      <div class="begin-path-content">
+        <p>Feeling stuck is not a flaw &mdash; it is often the signal that something in your life is ready to shift. Path Integration was created for the moments when you sense there is more available to you, but the path forward isn't yet clear.</p>
+        <p>The work we do together is not about fixing what is broken. It is about uncovering what is already within you &mdash; your values, your strengths, your natural ways of thriving &mdash; and building a life that genuinely reflects them.</p>
+        <p>Through a personalized blend of evidence-based assessments, reflective practices, somatic awareness tools, and structured goal work, you will leave with more than a plan. You will leave with a deeper understanding of yourself and a renewed sense of direction.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FRANKL QUOTE -->
+  <div class="quote-banner">
+    <blockquote>
+      &ldquo;Between stimulus and response there is a space. In that space is our power to choose our response. In our response lies our growth and our freedom.&rdquo;
+      <cite>&mdash; Viktor Frankl</cite>
+    </blockquote>
+  </div>
+
+  <!-- SECTION 7 — BOOK A SESSION -->
   <section class="booking" id="book">
     <div class="container">
       <div class="section-label">Let's Work Together</div>
       <h2>Ready to Find Your Path?</h2>
       <p>Book a free consultation to talk about where you are, where you want to go, and whether Path Integration Coaching is the right fit.</p>
 
-      <!-- TidyCal Embed — replace YOUR-USERNAME with your TidyCal link -->
-      <div class="tidycal-embed" data-path="YOUR-USERNAME">
-        TidyCal booking widget will appear here once your account is connected.
-      </div>
+      <div class="tidycal-embed" data-path="kellihamilton/start-of-application-process-class-of-2027"></div>
 
       <div class="contact-info">
         <a href="mailto:kellihamilton@pathintegration.org">kellihamilton@pathintegration.org</a>
@@ -650,8 +923,7 @@
     <p>&copy; 2026 Path Integration Coaching. All rights reserved.</p>
   </footer>
 
-  <!-- TidyCal Script — uncomment when ready -->
-  <!-- <script src="https://asset-tidycal.b-cdn.net/js/embed.js"></script> -->
+  <script src="https://asset-tidycal.b-cdn.net/js/embed.js"></script>
 
   <script>
     // Mobile nav toggle
